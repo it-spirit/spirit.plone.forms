@@ -8,9 +8,6 @@
 .. image:: https://codecov.io/gh/it-spirit/spirit.plone.forms/branch/main/graph/badge.svg
     :target: https://codecov.io/gh/it-spirit/spirit.plone.forms
 
-.. image:: https://codecov.io/gh/it-spirit/spirit.plone.forms/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/it-spirit/spirit.plone.forms
-
 .. image:: https://img.shields.io/pypi/v/spirit.plone.forms.svg
     :target: https://pypi.python.org/pypi/spirit.plone.forms/
     :alt: Latest Version
