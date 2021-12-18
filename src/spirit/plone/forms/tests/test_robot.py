@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
-import os
-import unittest
-
-import robotsuite
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
+from spirit.plone.forms.testing import ACCEPTANCE_TESTING
 
-from spirit.plone.forms.testing import (  # noqa: E501
-    SPIRIT_PLONE_FORMS_ACCEPTANCE_TESTING,
-)
+import os
+import robotsuite
+import unittest
 
 
 def test_suite():
@@ -27,7 +24,7 @@ def test_suite():
             [
                 layered(
                     robottestsuite,
-                    layer=SPIRIT_PLONE_FORMS_ACCEPTANCE_TESTING,
+                    layer=ACCEPTANCE_TESTING,
                 ),
             ]
         )

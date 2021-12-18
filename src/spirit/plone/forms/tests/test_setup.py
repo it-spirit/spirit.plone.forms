@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
+from plone import api
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+from spirit.plone.forms.testing import INTEGRATION_TESTING
+
 import unittest
 
-from plone import api
-from plone.app.testing import TEST_USER_ID, setRoles
-
-from spirit.plone.forms.testing import (  # noqa: E501
-    SPIRIT_PLONE_FORMS_INTEGRATION_TESTING,
-)
 
 try:
     from Products.CMFPlone.utils import get_installer
@@ -18,7 +17,7 @@ except ImportError:
 class TestSetup(unittest.TestCase):
     """Test that spirit.plone.forms is properly installed."""
 
-    layer = SPIRIT_PLONE_FORMS_INTEGRATION_TESTING
+    layer = INTEGRATION_TESTING
 
     def setUp(self):
         """Custom shared utility setup for tests."""
@@ -35,7 +34,6 @@ class TestSetup(unittest.TestCase):
     def test_browserlayer(self):
         """Test that ISpiritPloneFormsLayer is registered."""
         from plone.browserlayer import utils
-
         from spirit.plone.forms.interfaces import ISpiritPloneFormsLayer
 
         self.assertIn(ISpiritPloneFormsLayer, utils.registered_layers())
@@ -43,7 +41,7 @@ class TestSetup(unittest.TestCase):
 
 class TestUninstall(unittest.TestCase):
 
-    layer = SPIRIT_PLONE_FORMS_INTEGRATION_TESTING
+    layer = INTEGRATION_TESTING
 
     def setUp(self):
         self.portal = self.layer["portal"]
@@ -63,7 +61,6 @@ class TestUninstall(unittest.TestCase):
     def test_browserlayer_removed(self):
         """Test that ISpiritPloneFormsLayer is removed."""
         from plone.browserlayer import utils
-
         from spirit.plone.forms.interfaces import ISpiritPloneFormsLayer
 
         self.assertNotIn(ISpiritPloneFormsLayer, utils.registered_layers())

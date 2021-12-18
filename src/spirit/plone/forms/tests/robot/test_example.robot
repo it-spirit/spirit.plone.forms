@@ -10,7 +10,7 @@
 #
 # 1) Start robot server:
 #
-# $ bin/robot-server --reload-path src spirit.plone.forms.testing.SPIRIT_PLONE_FORMS_ACCEPTANCE_TESTING
+# $ bin/robot-server --reload-path src spirit.plone.forms.testing.ACCEPTANCE_TESTING
 #
 # 2) Run robot tests:
 #

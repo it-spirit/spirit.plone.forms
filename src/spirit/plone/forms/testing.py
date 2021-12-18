@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 from plone.app.contenttypes.testing import PLONE_APP_CONTENTTYPES_FIXTURE
 from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE
-from plone.app.testing import (
-    FunctionalTesting,
-    IntegrationTesting,
-    PloneSandboxLayer,
-    applyProfile,
-)
+from plone.app.testing import applyProfile
+from plone.app.testing import FunctionalTesting
+from plone.app.testing import IntegrationTesting
+from plone.app.testing import PloneSandboxLayer
 from plone.testing import z2
 
 import spirit.plone.forms
@@ -29,24 +27,24 @@ class SpiritPloneFormsLayer(PloneSandboxLayer):
         applyProfile(portal, "spirit.plone.forms:default")
 
 
-SPIRIT_PLONE_FORMS_FIXTURE = SpiritPloneFormsLayer()
+FIXTURE = SpiritPloneFormsLayer()
 
 
-SPIRIT_PLONE_FORMS_INTEGRATION_TESTING = IntegrationTesting(
-    bases=(SPIRIT_PLONE_FORMS_FIXTURE,),
+INTEGRATION_TESTING = IntegrationTesting(
+    bases=(FIXTURE,),
     name="SpiritPloneFormsLayer:IntegrationTesting",
 )
 
 
-SPIRIT_PLONE_FORMS_FUNCTIONAL_TESTING = FunctionalTesting(
-    bases=(SPIRIT_PLONE_FORMS_FIXTURE,),
+FUNCTIONAL_TESTING = FunctionalTesting(
+    bases=(FIXTURE,),
     name="SpiritPloneFormsLayer:FunctionalTesting",
 )
 
 
-SPIRIT_PLONE_FORMS_ACCEPTANCE_TESTING = FunctionalTesting(
+ACCEPTANCE_TESTING = FunctionalTesting(
     bases=(
-        SPIRIT_PLONE_FORMS_FIXTURE,
+        FIXTURE,
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         z2.ZSERVER_FIXTURE,
     ),
