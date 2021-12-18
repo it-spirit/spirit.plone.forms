@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 """Installer for the spirit.plone.forms package."""
 
-from setuptools import find_packages, setup
+from setuptools import find_packages
+from setuptools import setup
+
 
 long_description = "\n\n".join(
     [
@@ -13,10 +15,8 @@ long_description = "\n\n".join(
 
 
 setup(
-    name="spirit.plone.forms",
-    version="1.0a1",
-    description="Form fields, validators and widgets for Plone.",
-    long_description=long_description,
+    author="Thomas Massmann",
+    author_email="thomas.massmann@it-spir.it",
     # Get more from https://pypi.org/classifiers/
     classifiers=[
         "Environment :: Web Environment",
@@ -31,45 +31,39 @@ setup(
         "Operating System :: OS Independent",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     ],
-    keywords="Python Plone CMS",
-    author="Thomas Massmann",
-    author_email="thomas.massmann@it-spir.it",
-    url="https://github.com/collective/spirit.plone.forms",
-    project_urls={
-        "PyPI": "https://pypi.python.org/pypi/spirit.plone.forms",
-        "Source": "https://github.com/collective/spirit.plone.forms",
-        "Tracker": "https://github.com/collective/spirit.plone.forms/issues",
-        # 'Documentation': 'https://spirit.plone.forms.readthedocs.io/en/latest/',
+    description="Form fields, validators and widgets for Plone.",
+    entry_points="""
+    [z3c.autoinclude.plugin]
+    target = plone
+    """,
+    extras_require={
+        "test": [
+            "plone.app.contenttypes",
+            "plone.app.robotframework[debug]",
+            "plone.app.testing",
+            "plone.testing>=5.0.0",
+        ],
     },
-    license="GPL version 2",
-    packages=find_packages("src", exclude=["ez_setup"]),
-    namespace_packages=["spirit", "spirit.plone"],
-    package_dir={"": "src"},
     include_package_data=True,
-    zip_safe=False,
-    python_requires=">=3.7",
     install_requires=[
         "setuptools",
         # -*- Extra requirements: -*-
         "z3c.jbot",
-        "plone.api>=1.8.4",
-        "plone.app.dexterity",
     ],
-    extras_require={
-        "test": [
-            "plone.app.testing",
-            # Plone KGS does not use this version, because it would break
-            # Remove if your package shall be part of coredev.
-            # plone_coredev tests as of 2016-04-01.
-            "plone.testing>=5.0.0",
-            "plone.app.contenttypes",
-            "plone.app.robotframework[debug]",
-        ],
+    keywords="Python Plone CMS",
+    license="GPL version 2",
+    long_description=long_description,
+    name="spirit.plone.forms",
+    namespace_packages=["spirit", "spirit.plone"],
+    package_dir={"": "src"},
+    packages=find_packages("src", exclude=["ez_setup"]),
+    project_urls={
+        "PyPI": "https://pypi.python.org/pypi/spirit.plone.forms",
+        "Source": "https://github.com/it-spirit/spirit.plone.forms",
+        "Tracker": "https://github.com/it-spirit/spirit.plone.forms/issues",
     },
-    entry_points="""
-    [z3c.autoinclude.plugin]
-    target = plone
-    [console_scripts]
-    update_locale = spirit.plone.forms.locales.update:update_locale
-    """,
+    python_requires=">=3.7",
+    url="https://github.com/it-spirit/spirit.plone.forms",
+    version="0.1.0.dev0",
+    zip_safe=False,
 )
