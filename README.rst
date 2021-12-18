@@ -2,15 +2,14 @@
    If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
    This text does not appear on pypi or github. It is a comment.
 
-.. image:: https://github.com/collective/spirit.plone.forms/actions/workflows/plone-package.yml/badge.svg
-    :target: https://github.com/collective/spirit.plone.forms/actions/workflows/plone-package.yml
+.. image:: https://github.com/it-spirit/spirit.plone.forms/actions/workflows/plone-package.yml/badge.svg
+    :target: https://github.com/it-spirit/spirit.plone.forms/actions/workflows/plone-package.yml
 
-.. image:: https://coveralls.io/repos/github/collective/spirit.plone.forms/badge.svg?branch=main
-    :target: https://coveralls.io/github/collective/spirit.plone.forms?branch=main
-    :alt: Coveralls
+.. image:: https://codecov.io/gh/it-spirit/spirit.plone.forms/branch/main/graph/badge.svg
+    :target: https://codecov.io/gh/it-spirit/spirit.plone.forms
 
-.. image:: https://codecov.io/gh/collective/spirit.plone.forms/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/collective/spirit.plone.forms
+.. image:: https://codecov.io/gh/it-spirit/spirit.plone.forms/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/it-spirit/spirit.plone.forms
 
 .. image:: https://img.shields.io/pypi/v/spirit.plone.forms.svg
     :target: https://pypi.python.org/pypi/spirit.plone.forms/
@@ -93,8 +92,8 @@ Put your name here, you deserve it!
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/collective/spirit.plone.forms/issues
-- Source Code: https://github.com/collective/spirit.plone.forms
+- Issue Tracker: https://github.com/it-spirit/spirit.plone.forms/issues
+- Source Code: https://github.com/it-spirit/spirit.plone.forms
 - Documentation: https://docs.plone.org/foo/bar
 
 
